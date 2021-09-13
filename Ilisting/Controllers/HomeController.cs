@@ -155,9 +155,35 @@ namespace Ilisting.Controllers
             return View();
         }
 
-        //public ActionResult Temp()
-        //{
-        //    return View();
-        //}
+        public ActionResult Copylist()
+        {
+            List<string> AuthorList = new List<string>();
+            AuthorList.Add("Mahesh Chand");
+            AuthorList.Add("Praveen Kumar");
+            AuthorList.Add("Raj Kumar");
+            AuthorList.Add("Nipun Tomar");
+            AuthorList.Add("Dinesh Beniwal");
+            AuthorList.Add("Mahesh Chand");
+            AuthorList.Add("Praveen Kumar");
+            AuthorList.Add("Raj Kumar");
+            AuthorList.Add("Nipun Tomar");
+            AuthorList.Add("Dinesh Beniwal");
+
+            // Create an array of strings
+            string[] authorArray = new string[15];
+            // Copy entire List
+            //AuthorList.CopyTo(authorArray);
+            // Copy items starting at index = 4
+            //AuthorList.CopyTo(authorArray, 4);
+            // Copy 4 items starting at index 2 in List and copying
+            // to array starting at index 10
+            AuthorList.CopyTo(2, authorArray, 3, 4);
+            
+            return View();
+        }
+        public ActionResult Temp()
+        {
+            return View();
+        }
     }
 }

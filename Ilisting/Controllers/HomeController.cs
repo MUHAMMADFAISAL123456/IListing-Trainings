@@ -180,6 +180,36 @@ namespace Ilisting.Controllers
             return View();
         }
 
+
+        public ActionResult Findanitem()
+        {
+            List<string> AuthorList = new List<string>();
+            AuthorList.Add("Mahesh Chand");
+            AuthorList.Add("Praveen Kumar");
+            AuthorList.Add("Raj Kumar");
+            AuthorList.Add("Nipun Tomar");
+            AuthorList.Add("Mahesh Chand");
+            AuthorList.Add("Dinesh Beniwal");
+
+            // Contains - Check if an item is in the list
+            if (AuthorList.Contains("Mahesh Chand"))
+            {
+                Console.WriteLine("Author found!");
+            }
+            // Find an item and replace it with new item
+            int idx = AuthorList.IndexOf("Nipun Tomar");
+            if (idx >= 0)
+            {
+                AuthorList[idx] = "New Author";
+            }            idx = AuthorList.LastIndexOf("Mahesh Chand");
+            if (idx >= 0)
+            {
+                AuthorList[idx] = "New Mahesh";
+            }
+            Console.WriteLine("\nLastIndexOf ");
+           
+            return View();
+        }
         public ActionResult Temp()
         {
             return View();
